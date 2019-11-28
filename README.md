@@ -7,8 +7,6 @@
 1. **Dania Rababah**.
 1. **Ahmad Sawalqeh**.
 
-# Project Requirements
-
 ## Types of tools that we are going to use in our project:
 
 1. A browser: Google Chrome.
