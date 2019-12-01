@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>show</title>
+    <link rel="stylesheet" href="../../styles/base.css">
+  </head>
+  <body>
+    <main>
+        <h4>Meals Result</h4>
+        <% booksArray.forEach(book => { %>
+        <div class="booksDiv" data_id="<%= book.id %>">
+          <p><img src="<%= book.imageUrl %>"></p>
+          <p>
+            <%= book.mealsName %>
+          </p>
+          <form action="/details" method="post" >
+            <!-- <input type="hidden" name="title" value='<%= book.mealsName %>'> -->
+            <input type="text" name="id" value='<%= book.id %>'>
+            <!-- <input type="hidden" name="image_url" value='<%= book.imageUrl %>'> -->
+            <button>Select this Meal</button>
+          </form>
+        </div>
+        <% }); %>     
+      </main>
+  </body>
+</html>
