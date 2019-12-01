@@ -19,10 +19,10 @@
 **Name here**.
 
 - ***summary***:<br>
-summary here
+Our app is will give a recipe to the user response which will be main ingredient then give the user multi meal choices and when the user select one of the choices it will show the full description about that meal
 
 - ***The problem this App solves***:<br>
 description here 
 
 - ***MVP***:<br>
-coming soon.
+creating page shows all the suggestion recipe depending on what user wrote in the input field.
