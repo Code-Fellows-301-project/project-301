@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="">Random Meals</a>
+            <a href="/saved">favorite</a>
+            <a href="">About us</a>
+        </nav>
+    </header>
+    <main>
+        <h4>Saved Meals</h4>
+        <% mealsArray.forEach(meal => { %>
+        <div>
+            <img src="<%= meal.imageurl %>">
+            <p><%= meal.mealsname %></p>
+            <p><%= meal.category %></p>
+            <p><%= meal.area %></p>
+            <p><%= meal.instruction %></p>           
+        </div>          
+        <form action="/updatemeal/<%- meal.id %>" method="post" >
+            <input type="hidden" name="id" value='<%= meal.id %>'>
+            <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
+            <input type="hidden" name="category" value='<%= meal.category %>'>
+            <input type="hidden" name="area" value='<%= meal.area %>'>
+            <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
+            <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+            <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
+            <button>Update</button>
+        </form>
+        <form action="/deletemeal/<%- meal.id %>" method="post" >
+            <input type="hidden" name="_method" value="delete">
+            <input type="hidden" name="id" value='<%= meal.id %>'>
+            <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
+            <input type="hidden" name="category" value='<%= meal.category %>'>
+            <input type="hidden" name="area" value='<%= meal.area %>'>
+            <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
+            <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+            <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
+            <button>delete</button>
+        </form>
+        <% }); %>
+    </main>
+</body>
+</html>
