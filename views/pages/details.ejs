@@ -4,21 +4,35 @@
         <title>MealDetails</title>
   </head>
   <body>
-    
-    <main>
-        <ul>
-            <li>
-
-              <img src=<%= book.imageUrl %>>
-             <h3> <%= book.mealsName %> </h3>
-              <i><%= book.category %></i>
-              <p><%= book.area %></p>
-              <p><%= book.instruction %></p>
-             <button> <a href="<%= book.youtube %>" target='_blank'>youtube</a></button> 
-                           
-           </li>
-          </ul>
-    </main>
+      <header>
+          <nav>
+              <a href="/">Home</a>
+              <a href="">Random Meals</a>
+              <a href="/saved">favorite</a>
+              <a href="">About us</a>
+          </nav>
+      </header>
+      <main>
+          <ul>
+              <li>
+                  <img src=<%= meal.imageurl %>>
+                  <h3><%= meal.mealsname %></h3>
+                  <i><%= meal.category %></i>
+                  <p><%= meal.area %></p>
+                  <p><%= meal.instruction %></p>
+                  <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>
+                  <form action="/saved" method="post">
+                      <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
+                      <input type="hidden" name="category" value='<%= meal.category %>'>
+                      <input type="hidden" name="area" value='<%= meal.area %>'>
+                      <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
+                      <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+                      <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
+                      <button>Add to our Database</button>
+                  </form>                           
+            </li>
+            </ul>
+      </main>
     </body>
 </html>
 

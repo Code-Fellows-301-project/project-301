@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="">Random Meals</a>
+            <a href="/saved">favorite</a>
+            <a href="">About us</a>
+        </nav>
+    </header>
+    <form action="/updated/<%- meal.id %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="text" name="mealsname" value=<%= meal.mealsname %>>
+        <input type="text" name="category" value=<%= meal.category %>>
+        <input type="text" name="area" value=<%= meal.area %>>
+        <input type="text" name="instruction" value=<%= meal.instruction %>>
+        <input type="hidden" name="imageurl" value=<%= meal.imageurl %>>
+        <input type="hidden" name="youtube" value=<%= meal.youtube %>>
+        <button>Update Details</button>
+    </form>
+</body>
+</html>

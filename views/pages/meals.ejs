@@ -5,22 +5,26 @@
     <link rel="stylesheet" href="../../styles/base.css">
   </head>
   <body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="">Random Meals</a>
+            <a href="/saved">favorite</a>
+            <a href="">About us</a>
+        </nav>
+    </header>
     <main>
         <h4>Meals Result</h4>
-        <% booksArray.forEach(book => { %>
-        <div class="booksDiv" data_id="<%= book.id %>">
-          <p><img src="<%= book.imageUrl %>"></p>
-          <p>
-            <%= book.mealsName %>
-          </p>
-          <form action="/details" method="post" >
-            <!-- <input type="hidden" name="title" value='<%= book.mealsName %>'> -->
-            <input type="text" name="id" value='<%= book.id %>'>
-            <!-- <input type="hidden" name="image_url" value='<%= book.imageUrl %>'> -->
-            <button>Select this Meal</button>
-          </form>
+        <% mealsArray.forEach(meal => { %>
+        <div data_id="<%= meal.id %>">
+            <img src="<%= meal.imageurl %>">
+            <p><%= meal.mealsname %></p>
+            <form action="/details" method="post" >
+                <input type="hidden" name="id" value='<%= meal.id %>'>
+                <button>Select this Meal</button>
+            </form>
         </div>
         <% }); %>     
-      </main>
+    </main>
   </body>
 </html>
