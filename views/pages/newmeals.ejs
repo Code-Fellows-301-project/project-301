@@ -12,19 +12,19 @@
             <a href="/saved">favorite</a>
             <a href="">About us</a>
         </nav>
-    </header>
+    </header> 
     <main>
+        <form action="/newmeals" method="post">
+            <input type="text" name="newmeal" >
+            <button>searching by country </button>
+        </form>
         <h4>Meals Result</h4>
-        <% mealsArray.forEach(meal => { %>
+        <% newMealsArray.forEach(meal => { %>
         <div data_id="<%= meal.id %>">
             <img src="<%= meal.imageurl %>">
-            <p><%= meal.mealsname %></p>
-            <form action="/details" method="post" >
-                <input type="hidden" name="id" value='<%= meal.id %>'>
-                <button>Select this Meal</button>
-            </form>
+            <p><%= meal.mealsname %></p>        
         </div>
-        <% }); %>     
+        <% }); %>    
     </main>
   </body>
 </html>
