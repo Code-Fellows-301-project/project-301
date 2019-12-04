@@ -1,50 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head>
-   
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="">Random Meals</a>
-            <a href="/saved">favorite</a>
-            <a href="">About us</a>
-        </nav>
-    </header>
-    <main>
-        <h4>Saved Meals</h4>
-        <% mealsArray.forEach(meal => { %>
-        <div>
-            <img src="<%= meal.imageurl %>">
-            <p><%= meal.mealsname %></p>
-            <p><%= meal.category %></p>
-            <p><%= meal.area %></p>
-            <p><%= meal.instruction %></p>           
-        </div>          
-        <form action="/updatemeal/<%- meal.id %>" method="post" >
-            <input type="hidden" name="id" value='<%= meal.id %>'>
-            <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
-            <input type="hidden" name="category" value='<%= meal.category %>'>
-            <input type="hidden" name="area" value='<%= meal.area %>'>
-            <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
-            <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
-            <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
-            <button>Update</button>
-        </form>
-        <form action="/deletemeal/<%- meal.id %>" method="post" >
-            <input type="hidden" name="_method" value="delete">
-            <input type="hidden" name="id" value='<%= meal.id %>'>
-            <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
-            <input type="hidden" name="category" value='<%= meal.category %>'>
-            <input type="hidden" name="area" value='<%= meal.area %>'>
-            <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
-            <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
-            <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
-            <button>delete</button>
-        </form>
-        <% }); %>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>fooDiy</title>	
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Pacifico|Sacramento&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/ahmadstyle.css">
+	</head>
+	<body>
+		<header>
+            <div class="container">
+                <a href="/" class="logo">foo<span>D</span>yi</a>
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/saved" >Favourites</a></li>
+                    <li><a href="/">Random meals</a></li>
+                    <li><a href="/">About Us</a></li>
+                </ul>
+            </div>
+		</header>
+    <main class="yourSavedMeals">
+        <div class="overlay"></div>
+        <div class="container">
+        <div class="title">
+            <h1 class="heading">Your Favourites Meals</h1>
+            <hr>
+        </div>
+        <div class="savedMeals">
+            <% mealsArray.forEach(meal => { %>
+            <div class="imgSaved">
+                <img src="<%= meal.imageurl %>">
+            </div>
+            <div class="savedInsrt">
+                <h2><%= meal.mealsname %></h3>
+                <h4><i><%= meal.category %></i></h4>
+                <h4><%= meal.area %></h4>
+                <p><%= meal.instruction %></p>                      
+                <form action="/updatemeal/<%= meal.id %>" method="post" >
+                    <input type="hidden" name="id" value='<%= meal.id %>'>
+                    <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
+                    <input type="hidden" name="category" value='<%= meal.category %>'>
+                    <input type="hidden" name="area" value='<%= meal.area %>'>
+                    <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
+                    <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+                    <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
+                    <button>Update</button>
+                </form>
+                <form action="/deletemeal/<%= meal.id %>" method="post" >
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="hidden" name="id" value='<%= meal.id %>'>
+                    <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
+                    <input type="hidden" name="category" value='<%= meal.category %>'>
+                    <input type="hidden" name="area" value='<%= meal.area %>'>
+                    <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
+                    <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+                    <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
+                    <button>delete</button>
+                </form>
+            </div>
+            <hr>
+            <% }); %>
+        </div>
     </main>
+    <div class="clear"></div>
+	<footer>
+        <div class="container">
+            <p>Copyright © 2019</p>
+            <p>This website created with love by<br> Ahmad, Fatima, Nassem, Dania</p>
+        </div>
+    </footer>
+    <!-- JAVASCRIPT JS FILES -->	
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>		
+    <script src="js/custom.js"></script>
 </body>
 </html>

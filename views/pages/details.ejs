@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <title>MealDetails</title>
-  </head>
-  <body>
-      <header>
-          <nav>
-              <a href="/">Home</a>
-              <a href="">Random Meals</a>
-              <a href="/saved">favorite</a>
-              <a href="">About us</a>
-          </nav>
-      </header>
-      <main>
-          <ul>
-              <li>
-                  <img src=<%= meal.imageurl %>>
-                  <h3><%= meal.mealsname %></h3>
-                  <i><%= meal.category %></i>
-                  <p><%= meal.area %></p>
-                  <p><%= meal.instruction %></p>
-                  <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>
-                  <form action="/saved" method="post">
-                      <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
-                      <input type="hidden" name="category" value='<%= meal.category %>'>
-                      <input type="hidden" name="area" value='<%= meal.area %>'>
-                      <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
-                      <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
-                      <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
-                      <button>Add to our Database</button>
-                  </form>                           
-            </li>
-            </ul>
-      </main>
-    </body>
+	<head>
+		<meta charset="utf-8">
+		<title>fooDiy</title>	
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Pacifico|Sacramento&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/ahmadstyle.css">
+	</head>
+	<body>
+		<header>
+				<div class="container">
+						<a href="/" class="logo">foo<span>D</span>yi</a>
+						<ul>
+								<li><a href="/" >Home</a></li>
+								<li><a href="/saved" >Favourites</a></li>
+								<li><a href="/">Random meals</a></li>
+								<li><a href="/">About Us</a></li>
+						</ul>
+				</div>
+		</header>
+    <main>
+        <div class="overlay"></div>
+				<div class="container">
+            <div class="title">
+                <h1 class="heading">Your Selected Meal</h1>
+                <hr>
+                <h2><%= meal.mealsname %></h2>
+                <p><i><%= meal.category %></i></p>
+                <p><%= meal.area %></p>
+            </div>
+            <div class="mealBox">
+                <div class="imgBox" data_id="<%= meal.id %>">
+                    <img src=<%= meal.imageurl %>>
+                    <%= meal.instruction %>
+                  </div>
+                  <br>
+                  <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>                    
+                  <div class="form">
+                    <form action="/saved" method="post">
+                        <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
+                        <input type="hidden" name="category" value='<%= meal.category %>'>
+                        <input type="hidden" name="area" value='<%= meal.area %>'>
+                        <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
+                        <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+                        <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
+                        <button>Add to our Database</button>
+                    </form>
+                </div>
+            </div>
+				</div>
+    </main>
+    <div class="clear"></div>
+		<footer>
+				<div class="container">
+						<p>Copyright © 2019</p>
+						<p>This website created with love by<br> Ahmad, Fatima, Nassem, Dania</p>
+				</div>
+		</footer>
+		<!-- JAVASCRIPT JS FILES -->	
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>		
+		<script src="js/custom.js"></script>
+	</body>
 </html>
-
-
-
-

@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="">Random Meals</a>
-            <a href="/saved">favorite</a>
-            <a href="">About us</a>
-        </nav>
-    </header>
-    <form action="/updated/<%- meal.id %>" method="post">
-        <input type="hidden" name="_method" value="put">
-        <input type="text" name="mealsname" value=<%= meal.mealsname %>>
-        <input type="text" name="category" value=<%= meal.category %>>
-        <input type="text" name="area" value=<%= meal.area %>>
-        <input type="text" name="instruction" value=<%= meal.instruction %>>
-        <input type="hidden" name="imageurl" value=<%= meal.imageurl %>>
-        <input type="hidden" name="youtube" value=<%= meal.youtube %>>
-        <button>Update Details</button>
-    </form>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>fooDiy</title>	
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Pacifico|Sacramento&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/ahmadstyle.css">
+	</head>
+	<body>
+		<header>
+            <div class="container">
+                <a href="/" class="logo">foo<span>D</span>yi</a>
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/saved" >Favourites</a></li>
+                    <li><a href="/">Random meals</a></li>
+                    <li><a href="/">About Us</a></li>
+                </ul>
+            </div>
+		</header>
+        <form action="/updated/<%- meal.id %>" method="post">
+            <input type="hidden" name="_method" value="put">
+            <input type="text" name="mealsname" value='<%= meal.mealsname %>'>
+            <input type="text" name="category" value='<%= meal.category %>'>
+            <input type="text" name="area" value='<%= meal.area %>'>
+            <input type="text" name="instruction" value='<%= meal.instruction %>'>
+            <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+            <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
+            <button>Update Details</button>
+        </form>
+        <footer>
+            <div class="container">
+                <p>Copyright © 2019</p>
+                <p>This website created with love by<br> Ahmad, Fatima, Nassem, Dania</p>
+            </div>
+        </footer>
+        <!-- JAVASCRIPT JS FILES -->	
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>		
+        <script src="js/custom.js"></script>
+    </body>
 </html>
