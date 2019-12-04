@@ -45,6 +45,7 @@ function updateMeal(req, res){
   let {mealsname, category, area, instruction, imageurl, youtube,noin1,noin2,noin3,noin4,noin5,noin6,noin7,noin8,noin9,noin10,noin11,noin12,noin13,noin14,noin15,noin16,noin17,noin18,noin19,noin20,nome1,nome2,nome3,nome4,nome5,nome6,nome7,nome8,nome9,nome10,nome11,nome12,nome13,nome14,nome15,nome16,nome17,nome18,nome19,nome20,} = req.body;
     const SQL = 'UPDATE recipe SET mealsname=$1, category=$2, area=$3, instruction=$4,  imageurl=$5, youtube=$6, noin1=$7, noin2=$8, noin3=$9, noin4=$10, noin5=$11, noin6=$12, noin7=$13, noin8=$14, noin9=$15, noin10=$16, noin11=$17, noin12=$18, noin13=$19, noin14=$20, noin15=$21, noin16=$22, noin17=$23, noin18=$24, noin19=$25, noin20=$26, nome1=$27, nome2=$28, nome3=$29, nome4=$30, nome5=$31, nome6=$32, nome7=$33, nome8=$34, nome9=$35, nome10=$36, nome11=$37, nome12=$38, nome13=$39, nome14=$40, nome15=$41, nome16=$42, nome17=$43, nome18=$44, nome19=$45, nome20=$46 WHERE id=$47';
     let values = [mealsname, category, area, instruction, imageurl, youtube, noin1, noin2, noin3, noin4, noin5, noin6, noin7, noin8, noin9, noin10, noin11, noin12, noin13, noin14, noin15, noin16, noin17, noin18, noin19, noin20, nome1, nome2, nome3, nome4, nome5, nome6, nome7, nome8, nome9, nome10, nome11, nome12, nome13, nome14, nome15, nome16, nome17, nome18, nome19, nome20, req.params.id]; 
+    console.log('values,',values);
     
   client.query(SQL, values)
     .then(res.redirect('/saved'));
