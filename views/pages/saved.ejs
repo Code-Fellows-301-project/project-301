@@ -89,7 +89,11 @@
                             <li>   <%= meal.nome20%>   </li>  
                             </ul>
                         </section> 
-                        <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button> 
+                        <!-- <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>  -->
+                        <!-- <div class="iframe"> -->
+                            <!-- <iframe id="savedVideo" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/czx_uiMY0Ag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                          <!-- </div> -->
                 <form action="/updatemeal/<%= meal.id %>" method="post" >
                     <input type="hidden" name="id" value='<%= meal.id %>'>
                     <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
@@ -97,7 +101,7 @@
                     <input type="hidden" name="area" value='<%= meal.area %>'>
                     <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
                     <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
-                    <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
+                    <input id='youtube' type="hidden" name="youtube" value='<%= meal.youtube %>'>
 
                     <input type="hidden" name="noin1" value=' <%= meal.noin1%>  '>
                     <input type="hidden" name="noin2" value=' <%= meal.noin2%>  '>

@@ -31,7 +31,7 @@
                 <p><%= meal.area %></p>
             </div>
             <div class="mealBox">
-                <div class="imgBox" data_id="<%= meal.id %>">
+                <div class="imgBox" data_id="<%= meal.search_query %>">
                     <img src=<%= meal.imageurl %>>
                     <%= meal.instruction %>
                   </div>
@@ -88,9 +88,14 @@
                       </ul>
                     </section>                   
                     <!-- <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>  -->
-                    <iframe id="mealVideo" data-id='<%= meal.id %>' src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="iframeDiv">
+                      
+                      <iframe id="mealVideo" data-id='<%= meal.search_query %>' src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/czx_uiMY0Ag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    </div>
                     <div class="form">
                       <form action="/saved" method="post">
+                        <input type="hidden" name="id" value='<%= meal.search_query %>'>
                         <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
                         <input type="hidden" name="category" value='<%= meal.category %>'>
                         <input type="hidden" name="area" value='<%= meal.area %>'>
