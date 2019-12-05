@@ -60,10 +60,10 @@ function getFromDataBase(req, res){
     })
     .catch(error => errorHandler(error, res));
 }
-let mealId;
+// let mealId;
 function addToDataBase(req, res){
-  console.log('req.body.id : ', req.body.id);
-  mealId= req.body.id;
+  // console.log('req.body.id : ', req.body.id);
+  // mealId= req.body.id;
   let {mealsname, category, area, instruction, imageurl, youtube,noin1,noin2,noin3,noin4,noin5,noin6,noin7,noin8,noin9,noin10,noin11,noin12,noin13,noin14,noin15,noin16,noin17,noin18,noin19,noin20,nome1,nome2,nome3,nome4,nome5,nome6,nome7,nome8,nome9,nome10,nome11,nome12,nome13,nome14,nome15,nome16,nome17,nome18,nome19,nome20,} = req.body;
   let SQL = 'INSERT INTO recipe (mealsname, category, area, instruction, imageurl, youtube, noin1,noin2, noin3, noin4, noin5, noin6, noin7, noin8, noin9, noin10, noin11, noin12, noin13, noin14, noin15, noin16, noin17, noin18, noin19, noin20, nome1, nome2, nome3, nome4, nome5, nome6, nome7, nome8, nome9, nome10, nome11, nome12, nome13, nome14, nome15, nome16, nome17, nome18, nome19, nome20) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46);';
   let values = [mealsname, category, area, instruction, imageurl, youtube, noin1, noin2, noin3, noin4, noin5, noin6, noin7, noin8, noin9, noin10, noin11, noin12, noin13, noin14, noin15, noin16, noin17, noin18, noin19, noin20, nome1, nome2, nome3, nome4, nome5, nome6, nome7, nome8, nome9, nome10, nome11, nome12, nome13, nome14, nome15, nome16, nome17, nome18, nome19, nome20];
@@ -109,7 +109,7 @@ function recipeHandler(req,res) {
 }
 function getRecipe(recipe,res) {
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipe}`;
-  console.log('recipe : ', recipe);
+  // console.log('recipe : ', recipe);
   return superagent.get(url)
     .then( data => {
 
@@ -117,7 +117,7 @@ function getRecipe(recipe,res) {
       
     })
     .then(results => {
-      console.log('results : ', results);
+      // console.log('results : ', results);
       res.render('pages/details', { meal: results, });
     })
     .catch(error => errorHandler(error, res));
