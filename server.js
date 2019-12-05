@@ -29,6 +29,8 @@ app.get('/saved',getFromDataBase);
 app.post('/updatemeal/:id', getUpdateForm);
 app.put('/updated/:id',updateMeal );
 app.delete('/deletemeal/:id', deleteMeal );
+app.get('/search', newmealForm);
+app.post('/newmeals', newMealHandler);
 /********************** functions *************************/
 function deleteMeal(req, res){
   let values = [req.params.id];
@@ -78,11 +80,38 @@ function addToDataBase(req, res){
 function mealForm(req,res) {
   res.render('pages/index');
 }
+function newmealForm(req,res) {
+  res.render('pages/search');
+}
 function mealsHandler(req, res){
   getMeal(req.body.meal, res)
     .then( (mealData) => res.status(200).json(mealData) )
     .catch(error => errorHandler(error, res));
 }
+function newMealHandler (req,res){
+  getNewMeal(req.body.newmeal, res)
+  .then( (mealData) => res.status(200).json(mealData) );
+}
+function  getNewMeal(country,res){
+  const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`;
+  return superagent.get(url)
+    .then( data => {
+
+      return data.body.meals.map(result=>{
+        return new Newmeal(country, result);
+      });
+    })
+    .then(results => {
+      res.render('pages/newmeals', { newMealsArray: results, });
+    })
+    .catch(error => errorHandler(error, res));
+
+}
+function errorHandler(err, res){
+  console.log(err);
+  res.status(500).render('pages/error');
+}
+
 function getMeal(meal, res) {
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${meal}`;
   return superagent.get(url)
@@ -95,6 +124,12 @@ function getMeal(meal, res) {
       res.render('pages/meals', { mealsArray: results, });
     })
     .catch(error => errorHandler(error, res));
+}
+function Newmeal(country,data){
+  this.search_query = country;
+  this.mealsname = data.strMeal;
+  this.imageurl = data.strMealThumb;
+  this.id = data.idMeal;
 }
 function Meal(meal, data) {
   this.search_query = meal;

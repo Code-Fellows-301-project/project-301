@@ -197,11 +197,72 @@
                     <input type="hidden" name="nome19" value=' <%= meal.nome19%>  '>
                     <input type="hidden" name="nome20" value=' <%= meal.nome20%>  '>
 
+<<<<<<< HEAD
                     <button>delete</button>
                 </form>
             <!-- </div> -->
             <hr>
             <% }); %>
+=======
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/search">Random Meals</a>
+            <a href="/saved">favorite</a>
+            <a href="">About us</a>
+        </nav>
+    </header>
+    <main>
+        <h4>Saved Meals</h4>
+        <% mealsArray.forEach(meal => { %>
+        <div>
+            <img src="<%= meal.imageurl %>">
+            <p><%= meal.mealsname %></p>
+            <p><%= meal.category %></p>
+            <p><%= meal.area %></p>
+            <p><%= meal.instruction %></p>
+            <p> <%= meal.noin1%> </p>
+            <p> <%= meal.noin2%> </p>
+            <p> <%= meal.noin3%> </p>
+            <p> <%= meal.noin4%> </p>
+            <p> <%= meal.noin5%> </p>
+            <p> <%= meal.noin6%> </p>
+            <p> <%= meal.noin7%> </p>
+            <p> <%= meal.noin8%> </p>
+            <p> <%= meal.noin9%> </p>
+            <p> <%= meal.noin10%> </p>
+            <p> <%= meal.noin11%> </p>
+            <p> <%= meal.noin12%> </p>
+            <p> <%= meal.noin13%> </p>
+            <p> <%= meal.noin14%> </p>
+            <p> <%= meal.noin15%> </p>
+            <p> <%= meal.noin16%> </p>
+            <p> <%= meal.noin17%> </p>
+            <p> <%= meal.noin18%> </p>
+            <p> <%= meal.noin19%> </p>
+            <p> <%= meal.noin20%> </p>
+            <p> <%= meal.nome1%> </p>
+            <p> <%= meal.nome2%> </p>
+            <p> <%= meal.nome3%> </p>
+            <p> <%= meal.nome4%> </p>
+            <p> <%= meal.nome5%> </p>
+            <p> <%= meal.nome6%> </p>
+            <p> <%= meal.nome7%> </p>
+            <p> <%= meal.nome8%> </p>
+            <p> <%= meal.nome9%> </p>
+            <p> <%= meal.nome10%> </p>
+            <p> <%= meal.nome11%> </p>
+            <p> <%= meal.nome12%> </p>
+            <p> <%= meal.nome13%> </p>
+            <p> <%= meal.nome14%> </p>
+            <p> <%= meal.nome15%> </p>
+            <p> <%= meal.nome16%> </p>
+            <p> <%= meal.nome17%> </p>
+            <p> <%= meal.nome18%> </p>
+            <p> <%= meal.nome19%> </p>
+            <p> <%= meal.nome20%> </p>
+>>>>>>> 7444fbd2bef6e3dfa5966a2dd7a61dd362d2b2c6
         </div>
     </main>
     <div class="clear"></div>

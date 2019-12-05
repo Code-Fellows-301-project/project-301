@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>show</title>
+    <link rel="stylesheet" href="../../styles/base.css">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/search">Random Meals</a>
+            <a href="/saved">favorite</a>
+            <a href="">About us</a>
+        </nav>
+    </header> 
+    <main>
+        <form action="/newmeals" method="post">
+            <input type="text" name="newmeal" >
+            <button>searching by country </button>
+        </form>
+        <h4>Meals Result</h4>
+        <% newMealsArray.forEach(meal => { %>
+        <div data_id="<%= meal.id %>">
+            <img src="<%= meal.imageurl %>">
+            <p><%= meal.mealsname %></p>        
+        </div>
+        <% }); %>    
+    </main>
+  </body>
+</html>
