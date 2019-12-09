@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>fooDIY</title>	
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Pacifico|Sacramento&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/ahmadstyle.css">
+	</head>
+	<body>
+		<header>
+				<div class="container">
+						<a href="/" class="logo">foo<span>D</span>IY</a>
+						<ul>
+								<li><a href="/" >Home</a></li>
+								<li><a href="/saved" >Favourites</a></li>
+								<li><a href="/search">Random meals</a></li>
+						</ul>
+				</div>
+		</header>
+    <main class="suggestcontainer">
+        <div class="overlay"></div>
+				<div class="container">
+            <div class="title">
+                <h1 class="heading">Suggested Meals</h1>
+                <hr>
+            </div>
+            <div class="suggestedMeals">
+                <% mealsArray.forEach(meal => { %>
+                <div data_id="<%= meal.id %>" class="suggMeal" >
+                    <img src="<%= meal.imageurl %>" alt="meal gallery img">
+                    <div>
+                        <h3><%= meal.mealsname %></h3>
+                        <form action="/details" method="post" >
+                            <input type="hidden" name="id" value='<%= meal.id %>'>
+                            <button class="suggestButton">Select this Meal</button>
+                        </form>
+                    </div>                   
+                </div>
+                <% }); %> 
+            </div>
+				</div>
+    </main>
+    <div class="clear"></div>
+		<footer>
+				<div class="container">
+						<p>Copyright © 2019</p>
+						<p>This website created with love by<br> Ahmad, Fatima, Nassem, Dania</p>
+				</div>
+		</footer>
+		<!-- JAVASCRIPT JS FILES -->	
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>		
+		<script src="/js/custom.js"></script>
+	</body>
+</html>

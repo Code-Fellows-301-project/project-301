@@ -1,0 +1,150 @@
+*{
+  margin:0;
+  padding:0;
+  /* font-family: 'Lobster', cursive; */
+  /* font-family: 'Pacifico', cursive; */
+  /* font-family: 'Great Vibes', cursive; */
+  /* font-family: 'Sacramento', cursive; */
+}
+
+header nav {
+  /* height: 80px;
+  line-height: 80px; */
+  background-color: #BD787D;
+  color: #fff;
+  overflow: hidden;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999; /* this helped that the words won't cover the navbar */
+}
+header nav h2 {
+  float: left;
+  margin-left: 30px;
+  overflow: hidden;
+}
+header nav h2 span {
+  color: #E6D7DA;
+}
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+}
+header nav ul li {
+  float: left; /* to become at the same line not vertical */
+  padding: 10px;
+}
+header nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+header nav h2 a{
+  color: white;
+  text-decoration: none;
+}
+header nav h2{
+  margin-top: 15px;
+}
+header nav ul li a:hover {
+    color: #873647;
+}
+.active {
+    color: #873647;
+}
+
+/******************************************************************/
+.h1{
+  font-family: 'Sacramento', cursive;
+}
+.h-style{
+  font-size: 50px;
+  padding: 10px;
+}
+
+.tint {
+  position: relative;
+  height: 700px ;
+}
+.tint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(102, 104, 67, 0.4);
+  transition: all .3s linear;
+}
+
+input[type=text] {
+  width: 300px;
+  height: 60px;
+  margin: 20px;
+  box-sizing: border-box;
+  font-size: 25px;
+  border: 0;
+  padding: 10px;
+}
+
+button {
+  background: transparent;
+  border-radius: 0;
+  border: 3px solid #2c2323;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 16px 42px;
+  margin: 40px 0;
+  transition: all 0.4s ease-in-out;
+}
+button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.centered {
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #F7EDED;
+  background: rgba(234, 235, 232, 0.3);
+  transform: translate(-50%, -50%);
+}
+
+.zindex{
+  width:100%;
+  height: 700px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.about {
+  text-align: center;
+  color: white;
+  /* height: 700px; */
+ }
+
+footer {
+    background-color:#BD787D;
+    color:#fff;
+    padding:10px 0;
+    overflow:hidden;
+    /* z-index: 5; */
+}
+
+footer .copyright {
+  /* background-color:#494141; */
+  font-size: 20px;
+  text-align: center;
+}
