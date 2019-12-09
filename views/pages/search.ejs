@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-   
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/search">Random Meals</a>
-            <a href="/saved">favorite</a>
-            <a href="">About us</a>
-        </nav>
-    </header>
-    <main>
-        <form action="/newmeals" method="post">
-            <input type="text" name="newmeal" >
-            <button>searching by country </button>
-        </form>
-    </main>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>fooDIY</title>	
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Pacifico|Sacramento&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/ahmadstyle.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                    <a href="/" class="logo">foo<span>D</span>IY</a>
+                    <ul>
+                            <li><a href="/" >Home</a></li>
+                            <li><a href="/saved" >Favourites</a></li>
+                            <li><a href="/search">Random meals</a></li>
+                    </ul>
+            </div>
+        </header>
+        <section id="home" class="bg">
+            <div class="overlay"></div>
+            <div class="container">
+                <h2>Meals by Countries</h2>
+                <form action="/newmeals" method="post">
+                    <select name="country">
+                        <option value="American">American</option>
+                        <option value="British">British</option>
+                        <option value="Canadian">Canadian</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Egyptian">Egyptian</option>
+                        <option value="French">French</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Russian">Russian</option>
+                        <option value=Irish>Irish</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Turkish">Turkish</option>
+                    </select>
+                    <br>
+                    <button>Bring Meals</button>
+                </form>
+            </div>
+        </section>
+        <div class="clear"></div>
+		<!-- copyright section -->
+		<footer>
+				<div class="container">
+						<p>Copyright © 2019</p>
+						<p>This website created with love by<br> Ahmad, Fatima, Nassem, Dania</p>
+				</div>
+		</footer>
+		<!-- JAVASCRIPT JS FILES -->	
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>		
+		<script src="/js/custom.js"></script>
+    </body>
 </html>

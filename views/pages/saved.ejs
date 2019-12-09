@@ -15,85 +15,84 @@
                 <ul>
                     <li><a href="/" >Home</a></li>
                     <li><a href="/saved" >Favourites</a></li>
-                    <li><a href="/">Random meals</a></li>
-                    <li><a href="/">About Us</a></li>
+                    <li><a href="/search">Random meals</a></li>
                 </ul>
             </div>
 		</header>
     <main class="yourSavedMeals">
         <div class="overlay"></div>
         <div class="container">
-        <div class="title">
-            <h1 class="heading">Your Favourites Meals</h1>
-            <hr>
-        </div>
-        <div class="savedMeals">
-            <% mealsArray.forEach(meal => { %>
-            <div class="imgSaved">
-                <img src="<%= meal.imageurl %>">
+            <div class="title">
+                <h1 class="heading">Your Favourites Meals</h1>
+                <hr>
             </div>
-            <div class="savedInsrt">
-                <h2><%= meal.mealsname %></h3>
-                <h4><i><%= meal.category %></i></h4>
-                <h4><%= meal.area %></h4>
-                <p><%= meal.instruction %></p>
-            </div>
-            <h2>Ingredients :</h2>
+            <div class="savedMeals">
+                <% mealsArray.forEach(meal => { %>
+                <div class="imgSaved">
+                    <img src="<%= meal.imageurl %>">
+                </div>
+                <div class="savedInsrt">
+                    <h2><%= meal.mealsname %></h3>
+                    <h4><i><%= meal.category %></i></h4>
+                    <h4><%= meal.area %></h4>
+                    <p><%= meal.instruction %></p>
+                </div>
+                <h2>Ingredients :</h2>
                 <section id='ingredent' class="saved">
-                        <ul>
-                            <li>   <%= meal.noin1%>   </li>
-                            <li>   <%= meal.noin2%>   </li>
-                            <li>   <%= meal.noin3%>   </li>
-                            <li>   <%= meal.noin4%>   </li>
-                            <li>   <%= meal.noin5%>   </li>
-                            <li>   <%= meal.noin6%>   </li>
-                            <li>   <%= meal.noin7%>   </li>
-                            <li>   <%= meal.noin8%>   </li>
-                            <li>   <%= meal.noin9%>   </li>
-                            <li>   <%= meal.noin10%>   </li>
-                            </ul>
-                            <ul>
-                            <li>   <%= meal.noin11%>   </li>
-                            <li>   <%= meal.noin12%>   </li>
-                            <li>   <%= meal.noin13%>   </li>
-                            <li>   <%= meal.noin14%>   </li>
-                            <li>   <%= meal.noin15%>   </li>
-                            <li>   <%= meal.noin16%>   </li>
-                            <li>   <%= meal.noin17%>   </li>
-                            <li>   <%= meal.noin18%>   </li>
-                            <li>   <%= meal.noin19%>   </li>
-                            <li>   <%= meal.noin20%>   </li>
-                            </ul>
-                            <ul>
-                            <li>   <%= meal.nome1%>   </li>
-                            <li>   <%= meal.nome2%>   </li>
-                            <li>   <%= meal.nome3%>   </li>
-                            <li>   <%= meal.nome4%>   </li>
-                            <li>   <%= meal.nome5%>   </li>
-                            <li>   <%= meal.nome6%>   </li>
-                            <li>   <%= meal.nome7%>   </li>
-                            <li>   <%= meal.nome8%>   </li>
-                            <li>   <%= meal.nome9%>   </li>
-                            <li>   <%= meal.nome10%>   </li>
-                            </ul>
-                            <ul>
-                            <li>   <%= meal.nome11%>   </li>
-                            <li>   <%= meal.nome12%>   </li>
-                            <li>   <%= meal.nome13%>   </li>
-                            <li>   <%= meal.nome14%>   </li>
-                            <li>   <%= meal.nome15%>   </li>
-                            <li>   <%= meal.nome16%>   </li>
-                            <li>   <%= meal.nome17%>   </li>
-                            <li>   <%= meal.nome18%>   </li>
-                            <li>   <%= meal.nome19%>   </li>
-                            <li>   <%= meal.nome20%>   </li>  
-                            </ul>
-                        </section> 
-                        <!-- <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>  -->
-                        <!-- <div class="iframe"> -->
-                            <!-- <iframe id="savedVideo" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/czx_uiMY0Ag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                          <!-- </div> -->
+                    <ul>
+                        <li>   <%= meal.noin1%>   </li>
+                        <li>   <%= meal.noin2%>   </li>
+                        <li>   <%= meal.noin3%>   </li>
+                        <li>   <%= meal.noin4%>   </li>
+                        <li>   <%= meal.noin5%>   </li>
+                        <li>   <%= meal.noin6%>   </li>
+                        <li>   <%= meal.noin7%>   </li>
+                        <li>   <%= meal.noin8%>   </li>
+                        <li>   <%= meal.noin9%>   </li>
+                        <li>   <%= meal.noin10%>   </li>
+                    </ul>
+                    <ul>
+                        <li>   <%= meal.noin11%>   </li>
+                        <li>   <%= meal.noin12%>   </li>
+                        <li>   <%= meal.noin13%>   </li>
+                        <li>   <%= meal.noin14%>   </li>
+                        <li>   <%= meal.noin15%>   </li>
+                        <li>   <%= meal.noin16%>   </li>
+                        <li>   <%= meal.noin17%>   </li>
+                        <li>   <%= meal.noin18%>   </li>
+                        <li>   <%= meal.noin19%>   </li>
+                        <li>   <%= meal.noin20%>   </li>
+                    </ul>
+                    <ul>
+                        <li>   <%= meal.nome1%>   </li>
+                        <li>   <%= meal.nome2%>   </li>
+                        <li>   <%= meal.nome3%>   </li>
+                        <li>   <%= meal.nome4%>   </li>
+                        <li>   <%= meal.nome5%>   </li>
+                        <li>   <%= meal.nome6%>   </li>
+                        <li>   <%= meal.nome7%>   </li>
+                        <li>   <%= meal.nome8%>   </li>
+                        <li>   <%= meal.nome9%>   </li>
+                        <li>   <%= meal.nome10%>   </li>
+                    </ul>
+                    <ul>
+                        <li>   <%= meal.nome11%>   </li>
+                        <li>   <%= meal.nome12%>   </li>
+                        <li>   <%= meal.nome13%>   </li>
+                        <li>   <%= meal.nome14%>   </li>
+                        <li>   <%= meal.nome15%>   </li>
+                        <li>   <%= meal.nome16%>   </li>
+                        <li>   <%= meal.nome17%>   </li>
+                        <li>   <%= meal.nome18%>   </li>
+                        <li>   <%= meal.nome19%>   </li>
+                        <li>   <%= meal.nome20%>   </li>  
+                    </ul>
+                </section> 
+                            <!-- <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>  -->
+                            <!-- <div class="iframe"> -->
+                                <!-- <iframe id="savedVideo" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/czx_uiMY0Ag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                            <!-- </div> -->
                 <form action="/updatemeal/<%= meal.id %>" method="post" >
                     <input type="hidden" name="id" value='<%= meal.id %>'>
                     <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
@@ -197,72 +196,11 @@
                     <input type="hidden" name="nome19" value=' <%= meal.nome19%>  '>
                     <input type="hidden" name="nome20" value=' <%= meal.nome20%>  '>
 
-<<<<<<< HEAD
                     <button>delete</button>
                 </form>
-            <!-- </div> -->
-            <hr>
-            <% }); %>
-=======
-<body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/search">Random Meals</a>
-            <a href="/saved">favorite</a>
-            <a href="">About us</a>
-        </nav>
-    </header>
-    <main>
-        <h4>Saved Meals</h4>
-        <% mealsArray.forEach(meal => { %>
-        <div>
-            <img src="<%= meal.imageurl %>">
-            <p><%= meal.mealsname %></p>
-            <p><%= meal.category %></p>
-            <p><%= meal.area %></p>
-            <p><%= meal.instruction %></p>
-            <p> <%= meal.noin1%> </p>
-            <p> <%= meal.noin2%> </p>
-            <p> <%= meal.noin3%> </p>
-            <p> <%= meal.noin4%> </p>
-            <p> <%= meal.noin5%> </p>
-            <p> <%= meal.noin6%> </p>
-            <p> <%= meal.noin7%> </p>
-            <p> <%= meal.noin8%> </p>
-            <p> <%= meal.noin9%> </p>
-            <p> <%= meal.noin10%> </p>
-            <p> <%= meal.noin11%> </p>
-            <p> <%= meal.noin12%> </p>
-            <p> <%= meal.noin13%> </p>
-            <p> <%= meal.noin14%> </p>
-            <p> <%= meal.noin15%> </p>
-            <p> <%= meal.noin16%> </p>
-            <p> <%= meal.noin17%> </p>
-            <p> <%= meal.noin18%> </p>
-            <p> <%= meal.noin19%> </p>
-            <p> <%= meal.noin20%> </p>
-            <p> <%= meal.nome1%> </p>
-            <p> <%= meal.nome2%> </p>
-            <p> <%= meal.nome3%> </p>
-            <p> <%= meal.nome4%> </p>
-            <p> <%= meal.nome5%> </p>
-            <p> <%= meal.nome6%> </p>
-            <p> <%= meal.nome7%> </p>
-            <p> <%= meal.nome8%> </p>
-            <p> <%= meal.nome9%> </p>
-            <p> <%= meal.nome10%> </p>
-            <p> <%= meal.nome11%> </p>
-            <p> <%= meal.nome12%> </p>
-            <p> <%= meal.nome13%> </p>
-            <p> <%= meal.nome14%> </p>
-            <p> <%= meal.nome15%> </p>
-            <p> <%= meal.nome16%> </p>
-            <p> <%= meal.nome17%> </p>
-            <p> <%= meal.nome18%> </p>
-            <p> <%= meal.nome19%> </p>
-            <p> <%= meal.nome20%> </p>
->>>>>>> 7444fbd2bef6e3dfa5966a2dd7a61dd362d2b2c6
+                <hr>
+                <% }); %>
+            </div>
         </div>
     </main>
     <div class="clear"></div>

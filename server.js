@@ -89,10 +89,10 @@ function mealsHandler(req, res){
     .catch(error => errorHandler(error, res));
 }
 function newMealHandler (req,res){
-  getNewMeal(req.body.newmeal, res)
-  .then( (mealData) => res.status(200).json(mealData) );
+  getNewMeal(req.body.country, res)
+    .then( (mealData) => res.status(200).json(mealData) );
 }
-function  getNewMeal(country,res){
+function getNewMeal(country,res){
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`;
   return superagent.get(url)
     .then( data => {
