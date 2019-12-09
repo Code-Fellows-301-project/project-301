@@ -1,125 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <title>MealDetails</title>
-  </head>
-  <body>
-      <header>
-          <nav>
-              <a href="/">Home</a>
-              <a href="/search">Random Meals</a>
-              <a href="/saved">favorite</a>
-              <a href="">About us</a>
-          </nav>
-      </header>
-      <main>
-          <ul>
-              <li>
-                  <img src=<%= meal.imageurl %>>
-                  <h3><%= meal.mealsname %></h3>
-                  <i><%= meal.category %></i>
-                  <p><%= meal.area %></p>
-                  <p><%= meal.instruction %></p>
-                  <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>
-                  <p>   <%= meal.noin1%>   </p>
-                  <p>   <%= meal.noin2%>   </p>
-                  <p>   <%= meal.noin3%>   </p>
-                  <p>   <%= meal.noin4%>   </p>
-                  <p>   <%= meal.noin5%>   </p>
-                  <p>   <%= meal.noin6%>   </p>
-                  <p>   <%= meal.noin7%>   </p>
-                  <p>   <%= meal.noin8%>   </p>
-                  <p>   <%= meal.noin9%>   </p>
-                  <p>   <%= meal.noin10%>   </p>
-                  <p>   <%= meal.noin11%>   </p>
-                  <p>   <%= meal.noin12%>   </p>
-                  <p>   <%= meal.noin13%>   </p>
-                  <p>   <%= meal.noin14%>   </p>
-                  <p>   <%= meal.noin15%>   </p>
-                  <p>   <%= meal.noin16%>   </p>
-                  <p>   <%= meal.noin17%>   </p>
-                  <p>   <%= meal.noin18%>   </p>
-                  <p>   <%= meal.noin19%>   </p>
-                  <p>   <%= meal.noin20%>   </p>
-                  <p>   <%= meal.nome1%>   </p>
-                  <p>   <%= meal.nome2%>   </p>
-                  <p>   <%= meal.nome3%>   </p>
-                  <p>   <%= meal.nome4%>   </p>
-                  <p>   <%= meal.nome5%>   </p>
-                  <p>   <%= meal.nome6%>   </p>
-                  <p>   <%= meal.nome7%>   </p>
-                  <p>   <%= meal.nome8%>   </p>
-                  <p>   <%= meal.nome9%>   </p>
-                  <p>   <%= meal.nome10%>   </p>
-                  <p>   <%= meal.nome11%>   </p>
-                  <p>   <%= meal.nome12%>   </p>
-                  <p>   <%= meal.nome13%>   </p>
-                  <p>   <%= meal.nome14%>   </p>
-                  <p>   <%= meal.nome15%>   </p>
-                  <p>   <%= meal.nome16%>   </p>
-                  <p>   <%= meal.nome17%>   </p>
-                  <p>   <%= meal.nome18%>   </p>
-                  <p>   <%= meal.nome19%>   </p>
-                  <p>   <%= meal.nome20%>   </p>
+	<head>
+		<meta charset="utf-8">
+		<title>fooDIY</title>	
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Pacifico|Sacramento&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/ahmadstyle.css">
+	</head>
+	<body>
+		<header>
+				<div class="container">
+						<a href="/" class="logo">foo<span>D</span>IY</a>
+						<ul>
+								<li><a href="/" >Home</a></li>
+								<li><a href="/saved" >Favourites</a></li>
+								<li><a href="/search">Random meals</a></li>
+						</ul>
+				</div>
+		</header>
+    <main>
+        <div class="overlay"></div>
+				<div class="container">
+            <div class="title">
+                <h1 class="heading">Your Selected Meal</h1>
+                <hr>
+                <h2><%= meal.mealsname %></h2>
+                <p><i><%= meal.category %></i></p>
+                <p><%= meal.area %></p>
+            </div>
+            <div class="mealBox">
+                <div class="imgBox" data_id="<%= meal.search_query %>">
+                    <img src=<%= meal.imageurl %>>
+                    <%= meal.instruction %>
+                  </div>
+                  <br>
+                  <h2>Ingredients :</h2>
+                  <section  id='ingredent'>
+                    <ul>
+                        <li>   <%= meal.noin1%>   </li>
+                        <li>   <%= meal.noin2%>   </li>
+                        <li>   <%= meal.noin3%>   </li>
+                        <li>   <%= meal.noin4%>   </li>
+                        <li>   <%= meal.noin5%>   </li>
+                        <li>   <%= meal.noin6%>   </li>
+                        <li>   <%= meal.noin7%>   </li>
+                        <li>   <%= meal.noin8%>   </li>
+                        <li>   <%= meal.noin9%>   </li>
+                        <li>   <%= meal.noin10%>   </li>
+                      </ul>
+                      <ul>
+                        <li>   <%= meal.noin11%>   </li>
+                        <li>   <%= meal.noin12%>   </li>
+                        <li>   <%= meal.noin13%>   </li>
+                        <li>   <%= meal.noin14%>   </li>
+                        <li>   <%= meal.noin15%>   </li>
+                        <li>   <%= meal.noin16%>   </li>
+                        <li>   <%= meal.noin17%>   </li>
+                        <li>   <%= meal.noin18%>   </li>
+                        <li>   <%= meal.noin19%>   </li>
+                        <li>   <%= meal.noin20%>   </li>
+                      </ul>
+                      <ul>
+                        <li>   <%= meal.nome1%>   </li>
+                        <li>   <%= meal.nome2%>   </li>
+                        <li>   <%= meal.nome3%>   </li>
+                        <li>   <%= meal.nome4%>   </li>
+                        <li>   <%= meal.nome5%>   </li>
+                        <li>   <%= meal.nome6%>   </li>
+                        <li>   <%= meal.nome7%>   </li>
+                        <li>   <%= meal.nome8%>   </li>
+                        <li>   <%= meal.nome9%>   </li>
+                        <li>   <%= meal.nome10%>   </li>
+                      </ul>
+                      <ul>
+                        <li>   <%= meal.nome11%>   </li>
+                        <li>   <%= meal.nome12%>   </li>
+                        <li>   <%= meal.nome13%>   </li>
+                        <li>   <%= meal.nome14%>   </li>
+                        <li>   <%= meal.nome15%>   </li>
+                        <li>   <%= meal.nome16%>   </li>
+                        <li>   <%= meal.nome17%>   </li>
+                        <li>   <%= meal.nome18%>   </li>
+                        <li>   <%= meal.nome19%>   </li>
+                        <li>   <%= meal.nome20%>   </li>  
+                      </ul>
+                    </section>                   
+                    <!-- <button><a href="<%= meal.youtube %>" target='_blank'>youtube</a></button>  -->
+                    <div class="iframeDiv">
+                      
+                      <iframe id="mealVideo" data-id='<%= meal.search_query %>' src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/czx_uiMY0Ag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    </div>
+                    <div class="form">
+                      <form action="/saved" method="post">
+                        <input type="hidden" name="id" value='<%= meal.search_query %>'>
+                        <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
+                        <input type="hidden" name="category" value='<%= meal.category %>'>
+                        <input type="hidden" name="area" value='<%= meal.area %>'>
+                        <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
+                        <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+                        <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
 
+                        <input type="hidden" name="noin1" value=' <%= meal.noin1%>  '>                      
+                        <input type="hidden" name="noin2" value=' <%= meal.noin2%>  '>
+                        <input type="hidden" name="noin3" value=' <%= meal.noin3%>  '>
+                        <input type="hidden" name="noin4" value=' <%= meal.noin4%>  '>
+                        <input type="hidden" name="noin5" value=' <%= meal.noin5%>  '>
+                        <input type="hidden" name="noin6" value=' <%= meal.noin6%>  '>
+                        <input type="hidden" name="noin7" value=' <%= meal.noin7%>  '>
+                        <input type="hidden" name="noin8" value=' <%= meal.noin8%>  '>
+                        <input type="hidden" name="noin9" value=' <%= meal.noin9%>  '>
+                        <input type="hidden" name="noin10" value=' <%= meal.noin10%>  '>
+                        <input type="hidden" name="noin11" value=' <%= meal.noin11%>  '>
+                        <input type="hidden" name="noin12" value=' <%= meal.noin12%>  '>
+                        <input type="hidden" name="noin13" value=' <%= meal.noin13%>  '>
+                        <input type="hidden" name="noin14" value=' <%= meal.noin14%>  '>
+                        <input type="hidden" name="noin15" value=' <%= meal.noin15%>  '>
+                        <input type="hidden" name="noin16" value=' <%= meal.noin16%>  '>
+                        <input type="hidden" name="noin17" value=' <%= meal.noin17%>  '>
+                        <input type="hidden" name="noin18" value=' <%= meal.noin18%>  '>
+                        <input type="hidden" name="noin19" value=' <%= meal.noin19%>  '>
+                        <input type="hidden" name="noin20" value=' <%= meal.noin20%>  '>
+                        <input type="hidden" name="nome1" value=' <%= meal.nome1%>  '>
+                        <input type="hidden" name="nome2" value=' <%= meal.nome2%>  '>
+                        <input type="hidden" name="nome3" value=' <%= meal.nome3%>  '>
+                        <input type="hidden" name="nome4" value=' <%= meal.nome4%>  '>
+                        <input type="hidden" name="nome5" value=' <%= meal.nome5%>  '>
+                        <input type="hidden" name="nome6" value=' <%= meal.nome6%>  '>
+                        <input type="hidden" name="nome7" value=' <%= meal.nome7%>  '>
+                        <input type="hidden" name="nome8" value=' <%= meal.nome8%>  '>
+                        <input type="hidden" name="nome9" value=' <%= meal.nome9%>  '>
+                        <input type="hidden" name="nome10" value=' <%= meal.nome10%>  '>
+                        <input type="hidden" name="nome11" value=' <%= meal.nome11%>  '>
+                        <input type="hidden" name="nome12" value=' <%= meal.nome12%>  '>
+                        <input type="hidden" name="nome13" value=' <%= meal.nome13%>  '>
+                        <input type="hidden" name="nome14" value=' <%= meal.nome14%>  '>
+                        <input type="hidden" name="nome15" value=' <%= meal.nome15%>  '>
+                        <input type="hidden" name="nome16" value=' <%= meal.nome16%>  '>
+                        <input type="hidden" name="nome17" value=' <%= meal.nome17%>  '>
+                        <input type="hidden" name="nome18" value=' <%= meal.nome18%>  '>
+                        <input type="hidden" name="nome19" value=' <%= meal.nome19%>  '>
+                        <input type="hidden" name="nome20" value=' <%= meal.nome20%> '>
 
-
-
-                  <form action="/saved" method="post">
-                      <input type="hidden" name="mealsname" value='<%= meal.mealsname %>'>
-                      <input type="hidden" name="category" value='<%= meal.category %>'>
-                      <input type="hidden" name="area" value='<%= meal.area %>'>
-                      <input type="hidden" name="instruction" value='<%= meal.instruction %>'>
-                      <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
-                      <input type="hidden" name="youtube" value='<%= meal.youtube %>'>
-                      <input type="hidden" name="noin1" value=' <%= meal.noin1%>  '>                      
-                      <input type="hidden" name="noin2" value=' <%= meal.noin2%>  '>
-                      <input type="hidden" name="noin3" value=' <%= meal.noin3%>  '>
-                      <input type="hidden" name="noin4" value=' <%= meal.noin4%>  '>
-                      <input type="hidden" name="noin5" value=' <%= meal.noin5%>  '>
-                      <input type="hidden" name="noin6" value=' <%= meal.noin6%>  '>
-                      <input type="hidden" name="noin7" value=' <%= meal.noin7%>  '>
-                      <input type="hidden" name="noin8" value=' <%= meal.noin8%>  '>
-                      <input type="hidden" name="noin9" value=' <%= meal.noin9%>  '>
-                      <input type="hidden" name="noin10" value=' <%= meal.noin10%>  '>
-                      <input type="hidden" name="noin11" value=' <%= meal.noin11%>  '>
-                      <input type="hidden" name="noin12" value=' <%= meal.noin12%>  '>
-                      <input type="hidden" name="noin13" value=' <%= meal.noin13%>  '>
-                      <input type="hidden" name="noin14" value=' <%= meal.noin14%>  '>
-                      <input type="hidden" name="noin15" value=' <%= meal.noin15%>  '>
-                      <input type="hidden" name="noin16" value=' <%= meal.noin16%>  '>
-                      <input type="hidden" name="noin17" value=' <%= meal.noin17%>  '>
-                      <input type="hidden" name="noin18" value=' <%= meal.noin18%>  '>
-                      <input type="hidden" name="noin19" value=' <%= meal.noin19%>  '>
-                      <input type="hidden" name="noin20" value=' <%= meal.noin20%>  '>
-                      <input type="hidden" name="nome1" value=' <%= meal.nome1%>  '>
-                      <input type="hidden" name="nome2" value=' <%= meal.nome2%>  '>
-                      <input type="hidden" name="nome3" value=' <%= meal.nome3%>  '>
-                      <input type="hidden" name="nome4" value=' <%= meal.nome4%>  '>
-                      <input type="hidden" name="nome5" value=' <%= meal.nome5%>  '>
-                      <input type="hidden" name="nome6" value=' <%= meal.nome6%>  '>
-                      <input type="hidden" name="nome7" value=' <%= meal.nome7%>  '>
-                      <input type="hidden" name="nome8" value=' <%= meal.nome8%>  '>
-                      <input type="hidden" name="nome9" value=' <%= meal.nome9%>  '>
-                      <input type="hidden" name="nome10" value=' <%= meal.nome10%>  '>
-                      <input type="hidden" name="nome11" value=' <%= meal.nome11%>  '>
-                      <input type="hidden" name="nome12" value=' <%= meal.nome12%>  '>
-                      <input type="hidden" name="nome13" value=' <%= meal.nome13%>  '>
-                      <input type="hidden" name="nome14" value=' <%= meal.nome14%>  '>
-                      <input type="hidden" name="nome15" value=' <%= meal.nome15%>  '>
-                      <input type="hidden" name="nome16" value=' <%= meal.nome16%>  '>
-                      <input type="hidden" name="nome17" value=' <%= meal.nome17%>  '>
-                      <input type="hidden" name="nome18" value=' <%= meal.nome18%>  '>
-                      <input type="hidden" name="nome19" value=' <%= meal.nome19%>  '>
-                      <input type="hidden" name="nome20" value=' <%= meal.nome20%> '>
-                      <button>Add to our Database</button>
-                  </form>                           
-            </li>
-            </ul>
-      </main>
-    </body>
+                        <button>Add to our Database</button>
+                    </form>
+                </div>
+            </div>
+				</div>
+    </main>
+    <div class="clear"></div>
+		<footer>
+				<div class="container">
+						<p>Copyright © 2019</p>
+						<p>This website created with love by<br> Ahmad, Fatima, Nassem, Dania</p>
+				</div>
+		</footer>
+		<!-- JAVASCRIPT JS FILES -->	
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>		
+		<script src="/js/custom.js"></script>
+	</body>
 </html>
-
-
-
-

@@ -36,7 +36,8 @@ function deleteMeal(req, res){
   let values = [req.params.id];
   let SQL = `DELETE FROM recipe WHERE id=$1;`;
   client.query(SQL, values)
-    .then(res.redirect('/saved'));
+    .then(res.redirect('/saved'))
+    .catch(error => errorHandler(error, res));
 }
 function getUpdateForm(req, res){
   let {mealsname, category, area, instruction, imageurl, youtube,noin1,noin2,noin3,noin4,noin5,noin6,noin7,noin8,noin9,noin10,noin11,noin12,noin13,noin14,noin15,noin16,noin17,noin18,noin19,noin20,nome1,nome2,nome3,nome4,nome5,nome6,nome7,nome8,nome9,nome10,nome11,nome12,nome13,nome14,nome15,nome16,nome17,nome18,nome19,nome20,} = req.body;
@@ -47,19 +48,24 @@ function updateMeal(req, res){
   let {mealsname, category, area, instruction, imageurl, youtube,noin1,noin2,noin3,noin4,noin5,noin6,noin7,noin8,noin9,noin10,noin11,noin12,noin13,noin14,noin15,noin16,noin17,noin18,noin19,noin20,nome1,nome2,nome3,nome4,nome5,nome6,nome7,nome8,nome9,nome10,nome11,nome12,nome13,nome14,nome15,nome16,nome17,nome18,nome19,nome20,} = req.body;
     const SQL = 'UPDATE recipe SET mealsname=$1, category=$2, area=$3, instruction=$4,  imageurl=$5, youtube=$6, noin1=$7, noin2=$8, noin3=$9, noin4=$10, noin5=$11, noin6=$12, noin7=$13, noin8=$14, noin9=$15, noin10=$16, noin11=$17, noin12=$18, noin13=$19, noin14=$20, noin15=$21, noin16=$22, noin17=$23, noin18=$24, noin19=$25, noin20=$26, nome1=$27, nome2=$28, nome3=$29, nome4=$30, nome5=$31, nome6=$32, nome7=$33, nome8=$34, nome9=$35, nome10=$36, nome11=$37, nome12=$38, nome13=$39, nome14=$40, nome15=$41, nome16=$42, nome17=$43, nome18=$44, nome19=$45, nome20=$46 WHERE id=$47';
     let values = [mealsname, category, area, instruction, imageurl, youtube, noin1, noin2, noin3, noin4, noin5, noin6, noin7, noin8, noin9, noin10, noin11, noin12, noin13, noin14, noin15, noin16, noin17, noin18, noin19, noin20, nome1, nome2, nome3, nome4, nome5, nome6, nome7, nome8, nome9, nome10, nome11, nome12, nome13, nome14, nome15, nome16, nome17, nome18, nome19, nome20, req.params.id]; 
-    console.log('values,',values);
+    // console.log('values,',values);
     
   client.query(SQL, values)
-    .then(res.redirect('/saved'));
+    .then(res.redirect('/saved'))
+    .catch(error => errorHandler(error, res));
 }
 function getFromDataBase(req, res){
   let sql = `SELECT * FROM recipe`;
   client.query(sql)
     .then(data => {
       res.render('pages/saved', { mealsArray: data.rows,});
-    });
+    })
+    .catch(error => errorHandler(error, res));
 }
+// let mealId;
 function addToDataBase(req, res){
+  // console.log('req.body.id : ', req.body.id);
+  // mealId= req.body.id;
   let {mealsname, category, area, instruction, imageurl, youtube,noin1,noin2,noin3,noin4,noin5,noin6,noin7,noin8,noin9,noin10,noin11,noin12,noin13,noin14,noin15,noin16,noin17,noin18,noin19,noin20,nome1,nome2,nome3,nome4,nome5,nome6,nome7,nome8,nome9,nome10,nome11,nome12,nome13,nome14,nome15,nome16,nome17,nome18,nome19,nome20,} = req.body;
   let SQL = 'INSERT INTO recipe (mealsname, category, area, instruction, imageurl, youtube, noin1,noin2, noin3, noin4, noin5, noin6, noin7, noin8, noin9, noin10, noin11, noin12, noin13, noin14, noin15, noin16, noin17, noin18, noin19, noin20, nome1, nome2, nome3, nome4, nome5, nome6, nome7, nome8, nome9, nome10, nome11, nome12, nome13, nome14, nome15, nome16, nome17, nome18, nome19, nome20) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46);';
   let values = [mealsname, category, area, instruction, imageurl, youtube, noin1, noin2, noin3, noin4, noin5, noin6, noin7, noin8, noin9, noin10, noin11, noin12, noin13, noin14, noin15, noin16, noin17, noin18, noin19, noin20, nome1, nome2, nome3, nome4, nome5, nome6, nome7, nome8, nome9, nome10, nome11, nome12, nome13, nome14, nome15, nome16, nome17, nome18, nome19, nome20];
@@ -68,7 +74,8 @@ function addToDataBase(req, res){
   client.query(SQL, values)
     .then(()=>{
       getFromDataBase(req, res);
-    });
+    })
+    .catch(error => errorHandler(error, res));
 }
 function mealForm(req,res) {
   res.render('pages/index');
@@ -78,13 +85,14 @@ function newmealForm(req,res) {
 }
 function mealsHandler(req, res){
   getMeal(req.body.meal, res)
-    .then( (mealData) => res.status(200).json(mealData) );
+    .then( (mealData) => res.status(200).json(mealData) )
+    .catch(error => errorHandler(error, res));
 }
 function newMealHandler (req,res){
-  getNewMeal(req.body.newmeal, res)
-  .then( (mealData) => res.status(200).json(mealData) );
+  getNewMeal(req.body.country, res)
+    .then( (mealData) => res.status(200).json(mealData) );
 }
-function  getNewMeal(country,res){
+function getNewMeal(country,res){
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`;
   return superagent.get(url)
     .then( data => {
@@ -114,7 +122,8 @@ function getMeal(meal, res) {
     })
     .then(results => {
       res.render('pages/meals', { mealsArray: results, });
-    });
+    })
+    .catch(error => errorHandler(error, res));
 }
 function Newmeal(country,data){
   this.search_query = country;
@@ -130,10 +139,12 @@ function Meal(meal, data) {
 }
 function recipeHandler(req,res) {
   getRecipe(req.body.id,res)
-    .then( (recipeData) => res.status(200).json(recipeData) );
+    .then( (recipeData) => res.status(200).json(recipeData) )
+    .catch(error => errorHandler(error, res));
 }
 function getRecipe(recipe,res) {
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipe}`;
+  // console.log('recipe : ', recipe);
   return superagent.get(url)
     .then( data => {
 
@@ -141,8 +152,10 @@ function getRecipe(recipe,res) {
       
     })
     .then(results => {
+      // console.log('results : ', results);
       res.render('pages/details', { meal: results, });
-    });
+    })
+    .catch(error => errorHandler(error, res));
 }
 function Recipe(recipe, data) {
   this.search_query = recipe;
@@ -195,6 +208,10 @@ function Recipe(recipe, data) {
 
   
 
+}
+function errorHandler(err, res){
+  console.log(err);
+  res.status(500).render('pages/error');
 }
 /********************** Error *************************/
 app.use('*', (request, response) => {

@@ -1,69 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>Document</title>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/search">Random Meals</a>
-            <a href="/saved">favorite</a>
-            <a href="">About us</a>
-        </nav>
-    </header>
-    <form action="/updated/<%- meal.id %>" method="post">
-        <input type="hidden" name="_method" value="put">
-        <input type="text" name="mealsname" value="<%= meal.mealsname %>">
-        <input type="text" name="category" value="<%= meal.category %>">
-        <input type="text" name="area" value="<%= meal.area %>">
-        <input type="text" name="instruction" value="<%= meal.instruction %>">
-        <input type="text" name="imageurl" value="<%= meal.imageurl %>">
-        <input type="text" name="youtube" value="<%= meal.youtube %>">
-        <input type="text" name="noin1" value="<%= meal.noin1 %>">
-        <input type="text" name="noin2" value="<%= meal.noin2 %>">
-        <input type="text" name="noin3" value="<%= meal.noin3 %>">
-        <input type="text" name="noin4" value="<%= meal.noin4 %>">
-        <input type="text" name="noin5" value="<%= meal.noin5 %>">
-        <input type="text" name="noin6" value="<%= meal.noin6 %>">
-        <input type="text" name="noin7" value="<%= meal.noin7 %>">
-        <input type="text" name="noin8" value="<%= meal.noin8 %>">
-        <input type="text" name="noin9" value="<%= meal.noin9 %>">
-        <input type="text" name="noin10" value="<%= meal.noin10 %>">
-        <input type="text" name="noin11" value="<%= meal.noin11 %>">
-        <input type="text" name="noin12" value="<%= meal.noin12 %>">
-        <input type="text" name="noin13" value="<%= meal.noin13 %>">
-        <input type="text" name="noin14" value="<%= meal.noin14 %>">
-        <input type="text" name="noin15" value="<%= meal.noin15 %>">
-        <input type="text" name="noin16" value="<%= meal.noin16 %>">
-        <input type="text" name="noin17" value="<%= meal.noin17 %>">
-        <input type="text" name="noin18" value="<%= meal.noin18 %>">
-        <input type="text" name="noin19" value="<%= meal.noin19 %>">
-        <input type="text" name="noin20" value="<%= meal.noin20 %>">
-        <input type="text" name="nome1" value="<%= meal.nome1 %>">
-        <input type="text" name="nome2" value="<%= meal.nome2 %>">
-        <input type="text" name="nome3" value="<%= meal.nome3 %>">
-        <input type="text" name="nome4" value="<%= meal.nome4 %>">
-        <input type="text" name="nome5" value="<%= meal.nome5 %>">
-        <input type="text" name="nome6" value="<%= meal.nome6 %>">
-        <input type="text" name="nome7" value="<%= meal.nome7 %>">
-        <input type="text" name="nome8" value="<%= meal.nome8 %>">
-        <input type="text" name="nome9" value="<%= meal.nome9 %>">
-        <input type="text" name="nome10" value="<%= meal.nome10 %>">
-        <input type="text" name="nome11" value="<%= meal.nome11 %>">
-        <input type="text" name="nome12" value="<%= meal.nome12 %>">
-        <input type="text" name="nome13" value="<%= meal.nome13 %>">
-        <input type="text" name="nome14" value="<%= meal.nome14 %>">
-        <input type="text" name="nome15" value="<%= meal.nome15 %>">
-        <input type="text" name="nome16" value="<%= meal.nome16 %>">
-        <input type="text" name="nome17" value="<%= meal.nome17 %>">
-        <input type="text" name="nome18" value="<%= meal.nome18 %>">
-        <input type="text" name="nome19" value="<%= meal.nome19 %>">
-        <input type="text" name="nome20" value="<%= meal.nome20 %>">
-        <button>Update Details</button>
-    </form>
-</body>
-
+	<head>
+		<meta charset="utf-8">
+		<title>fooDIY</title>	
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Pacifico|Sacramento&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/ahmadstyle.css">
+	</head>
+	<body>
+		<header>
+            <div class="container">
+                <a href="/" class="logo">foo<span>D</span>IY</a>
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/saved" >Favourites</a></li>
+                    <li><a href="/search">Random meals</a></li>
+                </ul>
+            </div>
+        </header>
+        <main class="updateMeal">
+            <div class="container">
+            <img src="<%= meal.imageurl %>" alt="meal">
+            <form action="/updated/<%- meal.id %>" method="post">
+                <input type="hidden" name="_method" value="put">
+                <input class='inputWidthFirst' type="text" name="mealsname" value='<%= meal.mealsname %>'>
+                <input class='inputWidthFirst' type="text" name="category" value='<%= meal.category %>'>
+                <input class='inputWidthFirst' type="text" name="area" value='<%= meal.area %>'><br>
+                <!-- <input type="text" name="instruction" value='<%= meal.instruction %>'> -->
+                <input type="hidden" name="imageurl" value='<%= meal.imageurl %>'>
+                <input type="hidden" name="youtube" value='<%= meal.youtube %>'><br>
+                <h2>Ingredients</h2> <br>
+                <input class='inputWidth' type="text" name="noin1" value="<%= meal.noin1 %>">
+                <input class='inputWidth' type="text" name="noin2" value="<%= meal.noin2 %>">
+                <input class='inputWidth' type="text" name="noin3" value="<%= meal.noin3 %>">
+                <input class='inputWidth' type="text" name="noin4" value="<%= meal.noin4 %>">
+                <input class='inputWidth' type="text" name="noin5" value="<%= meal.noin5 %>">
+                <input class='inputWidth' type="text" name="noin6" value="<%= meal.noin6 %>">
+                <input class='inputWidth' type="text" name="noin7" value="<%= meal.noin7 %>">
+                <input class='inputWidth' type="text" name="noin8" value="<%= meal.noin8 %>">
+                <input class='inputWidth' type="text" name="noin9" value="<%= meal.noin9 %>">
+                <input class='inputWidth' type="text" name="noin10" value="<%= meal.noin10 %>">
+                <input class='inputWidth' type="text" name="noin11" value="<%= meal.noin11 %>">
+                <input class='inputWidth' type="text" name="noin12" value="<%= meal.noin12 %>">
+                <input class='inputWidth' type="text" name="noin13" value="<%= meal.noin13 %>">
+                <input class='inputWidth' type="text" name="noin14" value="<%= meal.noin14 %>">
+                <input class='inputWidth' type="text" name="noin15" value="<%= meal.noin15 %>">
+                <input class='inputWidth' type="text" name="noin16" value="<%= meal.noin16 %>">
+                <input class='inputWidth' type="text" name="noin17" value="<%= meal.noin17 %>">
+                <input class='inputWidth' type="text" name="noin18" value="<%= meal.noin18 %>">
+                <input class='inputWidth' type="text" name="noin19" value="<%= meal.noin19 %>">
+                <input class='inputWidth' type="text" name="noin20" value="<%= meal.noin20 %>">
+                <input class='inputWidth' type="text" name="nome1" value="<%= meal.nome1 %>">
+                <input class='inputWidth' type="text" name="nome2" value="<%= meal.nome2 %>">
+                <input class='inputWidth' type="text" name="nome3" value="<%= meal.nome3 %>">
+                <input class='inputWidth' type="text" name="nome4" value="<%= meal.nome4 %>">
+                <input class='inputWidth' type="text" name="nome5" value="<%= meal.nome5 %>">
+                <input class='inputWidth' type="text" name="nome6" value="<%= meal.nome6 %>">
+                <input class='inputWidth' type="text" name="nome7" value="<%= meal.nome7 %>">
+                <input class='inputWidth' type="text" name="nome8" value="<%= meal.nome8 %>">
+                <input class='inputWidth' type="text" name="nome9" value="<%= meal.nome9 %>">
+                <input class='inputWidth' type="text" name="nome10" value="<%= meal.nome10 %>">
+                <input class='inputWidth' type="text" name="nome11" value="<%= meal.nome11 %>">
+                <input class='inputWidth' type="text" name="nome12" value="<%= meal.nome12 %>">
+                <input class='inputWidth' type="text" name="nome13" value="<%= meal.nome13 %>">
+                <input class='inputWidth' type="text" name="nome14" value="<%= meal.nome14 %>">
+                <input class='inputWidth' type="text" name="nome15" value="<%= meal.nome15 %>">
+                <input class='inputWidth' type="text" name="nome16" value="<%= meal.nome16 %>">
+                <input class='inputWidth' type="text" name="nome17" value="<%= meal.nome17 %>">
+                <input class='inputWidth' type="text" name="nome18" value="<%= meal.nome18 %>">
+                <input class='inputWidth' type="text" name="nome19" value="<%= meal.nome19 %>"><br>
+                <!-- <input class='inputWidth' type="text" name="nome20" value="<%= meal.nome20 %>"><br> -->
+                <h2>Instruction</h2> <br>
+                <textarea id='textArea' type="text"  name="instruction"><%= meal.instruction %></textarea>
+                
+                <button>Update Details</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+                <p>Copyright © 2019</p>
+                <p>This website created with love by<br> Ahmad, Fatima, Nassem, Dania</p>
+            </div>
+        </footer>
+        <!-- JAVASCRIPT JS FILES -->	
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>		
+        <script src="/js/custom.js"></script>
+    </body>
 </html>
